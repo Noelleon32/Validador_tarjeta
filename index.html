@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador y Generador de Tarjetas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Validador de Tarjetas</h1>
+    <label for="tarjeta">Tarjetas:</label>
+    <textarea id="tarjeta" placeholder="Ingrese una o varias tarjetas (una por línea o separadas por coma)" rows="4"></textarea>
+    <button id="btn-validar">Validar</button>
+    <div id="resultado" aria-live="polite"></div>
+
+    <hr>
+
+    <h2>Generador de Tarjetas</h2>
+    <label for="bin">BIN base:</label>
+    <input type="text" id="bin" placeholder="Ingrese BIN base (6-15 dígitos)" maxlength="15" />
+    
+    <label for="cantidad">Cantidad a generar:</label>
+    <input type="number" id="cantidad" value="10" min="1" placeholder="Cantidad a generar" />
+
+    <label><input type="checkbox" id="randomFecha" checked> Generar fecha aleatoria</label>
+    <div id="manualFecha" style="display: none;">
+      <div style="display: flex; gap: 10px;">
+        <label for="mes">Mes:</label>
+        <select id="mes" style="flex: 1;">
+          <option value="">Mes Exp</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        
+        <label for="anio">Año:</label>
+        <select id="anio" style="flex: 1;"></select>
+      </div>
+    </div>
+
+    <button id="btn-generar">Generar</button>
+    <button id="btn-descargar">Descargar .txt</button>
+    <pre id="lista"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
